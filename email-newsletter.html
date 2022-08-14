@@ -1,0 +1,629 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Fermyon Newsletter Email</title>
+    <style>
+      /* -------------------------------------
+          GLOBAL RESETS
+      ------------------------------------- */
+      
+      /*All the styling goes here*/
+      
+      img {
+        border: none;
+        -ms-interpolation-mode: bicubic;
+        max-width: 100%; 
+      }
+
+      body {
+        background-color: #F7F4F8;
+        font-family: Sen, Europa, Avenir, system, -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%; 
+      }
+
+      table {
+        border-collapse: separate;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        width: 100%; }
+        table td {
+          font-family: Sen, Europa, Avenir, system, -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+          font-size: 14px;
+          vertical-align: top; 
+      }
+
+      /* -------------------------------------
+          BODY & CONTAINER
+      ------------------------------------- */
+
+      .body {
+        background-color: #F7F4F8;
+        width: 100%; 
+      }
+
+      /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+      .container {
+        display: block;
+        margin: 0 auto !important;
+        /* makes it centered */
+        max-width: 580px;
+        padding: 10px;
+        width: 580px; 
+      }
+
+      /* This should also be a block element, so that it will fill 100% of the .container */
+      .content {
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto;
+        max-width: 580px;
+        padding: 10px; 
+      }
+
+      /* -------------------------------------
+          HEADER, FOOTER, MAIN
+      ------------------------------------- */
+      .main {
+        background: #ffffff;
+        border-radius: 12px;
+        width: 100%; 
+        margin-bottom: 18px;
+        box-shadow: 0 3px 0 0px #D9DBE8;
+      }
+
+      .wrapper {
+        box-sizing: border-box;
+        padding: 20px; 
+      }
+
+
+
+      .is-seagreen {
+        background-color: #34E8BD;
+        color: #213762;
+      }
+
+      .is-lavender {
+        background-color: #BEA7E5;
+        color: #213762;
+      }
+
+      .is-lavender-light {
+        background-color: #ECE5EE;
+        color: #213762;
+      }
+
+      table.is-padded > td {
+        padding: 12px;
+      }
+
+      table.is-padded h2,
+      table.is-padded h3 {
+        margin-top: 18px;
+        margin-bottom: 4px;
+      }
+
+      .content-block {
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+
+      .is-rounded {
+        border-radius: 7px;
+      }
+
+      .footer {
+        clear: both;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%; 
+      }
+        .footer td,
+        .footer p,
+        .footer span,
+        .footer a {
+          color: #999999;
+          font-size: 12px;
+          text-align: center; 
+      }
+
+      /* -------------------------------------
+          TYPOGRAPHY
+      ------------------------------------- */
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #213762;
+        font-family: Sen, Europa, Avenir, system, -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+        font-weight: 400;
+        line-height: 1.4;
+        margin: 0;
+        margin-bottom: 32px; 
+      }
+
+      h1 {
+        font-size: 35px;
+        font-weight: 300;
+        text-align: center;
+        text-transform: capitalize; 
+      }
+
+      h1, h2, h3 {
+        font-weight: bold;
+      }
+
+      p,
+      ul,
+      ol {
+        font-family: Sen, Europa, Avenir, system, -apple-system, ".SFNSText-Regular", "San Francisco", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+        font-weight: normal;
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 20px; 
+        max-width: 495px;
+      }
+        p li,
+        ul li,
+        ol li {
+          list-style-position: inside;
+          margin-left: 5px; 
+          line-height: 1.5;
+          margin-bottom: 5px;
+      }
+
+      dl {
+        margin: 20px 0 32px;
+      }
+      dt {
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: bold;
+        padding: 0 5% 0 16px;
+        margin: 0;
+        border-left: 4px solid #D9DBE8;
+
+      }
+      dd {
+        font-size: 14px;
+        line-height: 1.4;
+        padding: 0 0 0 16px;
+        margin: 0 0 18px;
+        border-left: 4px solid #D9DBE8;
+      }
+
+      img.thumbnail-full {
+        margin: 0 auto;
+        text-align: center;
+        margin-right: -15px;
+      }
+
+      dd small {
+        display: block;
+        color: #525776;
+      }
+      dd p {
+        margin: 12px 0;
+      }
+
+      p:first-of-type {
+        margin-top: 0;
+      }
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+
+      p.logo {
+        margin: 0 0 -5px;
+        max-width: 100%;
+      }
+      p.chat img {
+        margin: 0 -16px 16px 0;
+        position: relative;
+      }
+
+      a {
+        color: #0D203F;
+        text-decoration: none; 
+      }
+      .text-center {
+        text-align: center;
+      }
+      .text-left {
+        text-align: left;
+      }
+      .text-right {
+        text-align: right;
+      }
+
+      hr {
+        text-align: center;
+        width: 12.5%;
+        content: " ";
+        height: .33rem;
+        background: #bea7e5;
+        border-radius: .33rem;
+        margin: 42px auto 36px;
+        display: inline-block;
+        position: relative;
+        border: 0;
+      }
+
+      /* -------------------------------------
+          BUTTONS
+      ------------------------------------- */
+      .btn {
+        box-sizing: border-box;
+        width: 100%; }
+        .btn > tbody > tr > td {
+          padding-bottom: 15px; }
+        .btn table {
+          width: auto;
+      }
+      table.btn {
+        margin-top: 28px;
+        margin-bottom: 30px;
+      }
+      table.action-checklist {
+        max-width: 300px;
+      }
+        .btn table td {
+          background-color: #ffffff;
+          border-radius: 24px;
+          text-align: center; 
+      }
+        .btn a {
+          background-color: #ffffff;
+          border: solid 1px #1FBCA0;
+          border-radius: 24px;
+          box-sizing: border-box;
+          color: #1FBCA0;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: bold;
+          margin: 0;
+          padding: 12px 25px;
+          text-decoration: none;
+          text-transform: capitalize; 
+      }
+
+      .btn-primary table td {
+        background-color: #1FBCA0; 
+      }
+
+      .btn-primary a {
+        background-color: #1FBCA0;
+        border-color: #1FBCA0;
+        color: #ffffff; 
+      }
+
+      /* -------------------------------------
+          OTHER STYLES THAT MIGHT BE USEFUL
+      ------------------------------------- */
+      .last {
+        margin-bottom: 0; 
+      }
+
+      .first {
+        margin-top: 0; 
+      }
+
+      .align-center {
+        text-align: center; 
+      }
+
+      .align-right {
+        text-align: right; 
+      }
+
+      .align-left {
+        text-align: left; 
+      }
+
+      .clear {
+        clear: both; 
+      }
+
+      .mt0 {
+        margin-top: 0; 
+      }
+
+      .mb0 {
+        margin-bottom: 0; 
+      }
+
+      .preheader {
+        color: transparent;
+        display: none;
+        height: 0;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        mso-hide: all;
+        visibility: hidden;
+        width: 0; 
+      }
+
+      .powered-by a {
+        text-decoration: none; 
+      }
+
+      /* -------------------------------------
+          RESPONSIVE AND MOBILE FRIENDLY STYLES
+      ------------------------------------- */
+      @media only screen and (max-width: 620px) {
+        table.body h1 {
+          font-size: 28px !important;
+          margin-bottom: 10px !important; 
+        }
+        table.body p,
+        table.body ul,
+        table.body ol,
+        table.body td,
+        table.body span,
+        table.body a {
+          font-size: 16px !important; 
+        }
+        table.body .wrapper,
+        table.body .article {
+          padding: 10px !important; 
+        }
+        table.body .content {
+          padding: 0 !important; 
+        }
+        table.body .container {
+          padding: 0 !important;
+          width: 100% !important; 
+        }
+        table.body .main {
+          border-left-width: 0 !important;
+          border-radius: 0 !important;
+          border-right-width: 0 !important; 
+        }
+        table.body .btn table {
+          width: 100% !important; 
+        }
+        table.body .btn a {
+          width: 100% !important; 
+        }
+        table.body .img-responsive {
+          height: auto !important;
+          max-width: 100% !important;
+          width: auto !important; 
+        }
+      }
+
+      /* -------------------------------------
+          PRESERVE THESE STYLES IN THE HEAD
+      ------------------------------------- */
+      @media all {
+        .ExternalClass {
+          width: 100%; 
+        }
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+          line-height: 100%; 
+        }
+        .apple-link a {
+          color: inherit !important;
+          font-family: inherit !important;
+          font-size: inherit !important;
+          font-weight: inherit !important;
+          line-height: inherit !important;
+          text-decoration: none !important; 
+        }
+        #MessageViewBody a {
+          color: inherit;
+          text-decoration: none;
+          font-size: inherit;
+          font-family: inherit;
+          font-weight: inherit;
+          line-height: inherit;
+        }
+        .btn-primary table td:hover {
+          background-color: #34495e !important; 
+        }
+        .btn-primary a:hover {
+          background-color: #34495e !important;
+          border-color: #34495e !important; 
+        } 
+      }
+
+    </style>
+  </head>
+  <body>
+    <span class="preheader">Upcoming events and current job openings at Fermyon</span>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+      <tr>
+        <td>&nbsp;</td>
+        <td class="container">
+          <div class="content">
+
+            <!-- START CENTERED WHITE CONTAINER -->
+            <table role="presentation" class="main">
+
+              <!-- START MAIN CONTENT AREA -->
+              <tr>
+                <td class="wrapper">
+
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>
+                        
+                        <p class="text-center">
+                            <img src="insider-newsletter-banner.svg" alt="Fermyon Insider Updates" />
+                        </p>
+
+                        <p>&nbsp;</p>
+
+                        <h2 class="text-center">
+                            <a href="https://www.fermyon.com/blog/open-source-summit-europe-fermyon-2022" target="_blank">Upcoming Conferences &amp; Events</a>
+                        </h2>
+
+                        <p class="text-center"><a href="https://www.fermyon.com/blog/open-source-summit-europe-fermyon-2022" target="_blank"><img src="finicky-whiskers.jpg" alt="Finicky Whiskers at Open Source Summit North America" class="thumbnail-full" /></a></p>
+
+                        <dl>
+                            <dt><a href="https://www.fermyon.com/blog/open-source-summit-europe-fermyon-2022" target="_blank">Open Source Summit Europe 2022</a></dt>
+                            <dd>
+                                <p><small>September 13-18, Dublin, Ireland &amp; Virtual</small></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </dd>
+                            <dt><a href="https://www.fermyon.com/blog/kubecon-cloudnativecon-detroit-2022" target="_blank">KubeCon + CloudNativeCon North America 2022</a></dt>
+                            <dd>
+                                <p><small>October 24-28, Detroit &amp; Virtual</small></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </dd>
+                        </dl>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+                        <table role="presentation" border="0" cellpadding="16" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td align="center" class="text-center">
+                                        <hr class="text-center" align="center">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table role="presentation" border="0" cellpadding="16" cellspacing="0" class="is-rounded is-lavender-light is-padded">
+                            <tbody>
+                                <tr>
+                                    <td align="center" class="text-center">
+                                        <h2 class="text-center">Fermyon is Hiring</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <p>We're hiring for a for a variety of positions, including roles in Engineering, DevRel and Community. Come work with us!</p>
+
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn">
+                                            <tbody>
+                                              <tr>
+                                                <td align="center">
+                                                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td><a href="http://htmlemail.io" target="_blank">View Job Openings</a></td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table role="presentation" border="0" cellpadding="16" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td align="center" class="text-center">
+                                        <hr class="text-center" align="center">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2 class="text-center">
+                            <a href="https://www.fermyon.com/blog/open-source-summit-europe-fermyon-2022" target="_blank">WebAssembly Community</a>
+                        </h2>
+
+                        <p class="text-center"><a href="https://discord.gg/AAFNfS7NGf" target="_blank"><img src="matt-butcher-ossna.jpg" alt="Matt Butcher at the recent Open Source Summit North America conference" />
+
+                        <p>The buzz around the value of using WebAssembly in the cloud continues to grow &mdash; through the <a href="https://bytecodealliance.org/" target="_blank">Bytecode Alliance</a> and community collaboration (with initiatives like <a href="https://www.wasm.builders/" target="_blank">wasm.builders</a>) we're very excited to be ideating and building in this space.</p>
+
+                        <ul>
+                            <li><a href="https://thenewstack.io/whats-next-in-webassembly/" target="_blank">What's next in WebAssembly? (interview)</a></li>
+                            <li><a href="https://www.fermyon.com/blog/open-source-summit-fermyon-2022" target="_blank">Watch "Rethinking Microservices with WebAssembly"</a></li>
+                        </ul>
+
+                        <p>If this type of thing is of interest to you, there's a lots more discussion to be found on our <a href="https://discord.com/invite/AAFNfS7NGf">Discord server</a> around community projects, WebAssembly tooling and the things we are building.</p>
+
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary text-center">
+                            <tbody>
+                              <tr>
+                                <td align="center">
+                                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                      <tr>
+                                        <td> <a href="https://discord.com/invite/AAFNfS7NGf" target="_blank">Join Fermyon's Discord</a> </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                        </table>
+
+                        <table role="presentation" border="0" cellpadding="16" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td align="center" class="text-center">
+                                        <hr class="text-center" align="center">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p class="text-right chat"><a target="_blank" href="https://discord.com/invite/AAFNfS7NGf"><img src="chat-w-us.gif" alt="Chat with our team on the Fermyon Discord server" /></a></p>
+
+                        <div class="text-right">
+                          <!-- <hr> -->
+                          <p class="logo"><a href="https://www.fermyon.com"><img src="https://www.fermyon.com/static/image/avatar.png" alt="Fermyon Logo" height="32px" /></a></p>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+            <!-- END MAIN CONTENT AREA -->
+            </table>
+            <!-- END CENTERED WHITE CONTAINER -->
+
+            <!-- START FOOTER -->
+            <div class="footer">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="content-block">
+                    <span class="apple-link"><a href="https://fermyon.com/" target="_blank">Fermyon Technologies, 1628 Naples Ln, Longmont, CO 80503</a></span>
+                    <br>
+                    <span class="apple-link"><a href="https://discord.gg/AAFNfS7NGf" target="_blank">Discord</a></span> &nbsp; &#8226; &nbsp; <span class="apple-link"><a href="https://github.com/fermyon/" target="_blank">GitHub</a></span>&nbsp; &#8226; &nbsp;  <span class="apple-link"><a href="https://twitter.com/fermyontech" target="_blank">Twitter</a></span> &nbsp; &#8226; &nbsp; <span class="apple-link"><a href="https://www.youtube.com/channel/UCGgsMYwLxmIgv1lXaActZqw" target="_blank">YouTube</a></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="content-block powered-by">
+                    Don't like these emails? <a href="#">Unsubscribe</a>.
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- END FOOTER -->
+
+          </div>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </body>
+</html>
