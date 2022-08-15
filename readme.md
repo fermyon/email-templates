@@ -1,6 +1,6 @@
 # Fermyon Email Templates
 
-These are responsive, platform agnostic templates for Fermyon emails - based off of the [Responsive HTML Email Template](https://github.com/leemunroe/responsive-html-email-template) by @leemunroe.
+These are responsive, platform agnostic templates for Fermyon emails - based off of the [Responsive HTML Email Template](https://github.com/leemunroe/responsive-html-email-template) by [@leemunroe](https://github.com/leemunroe).
 
 * Transactional Emails
 * Conversational Emails
@@ -11,7 +11,7 @@ These are responsive, platform agnostic templates for Fermyon emails - based off
 
 Different tools like Mailchimp, Hubspot, Mailgun, Sendgrid, Intercom etc have their own formatting snippets to embed things like usernames, links and editable content. These templates can theoretically be used in any of those messaging platforms, but will require template tweaks to integrate into how they render, edit and send their emails.
 
-Consult their documentation, and always remember to [inline the CSS])(https://htmlemail.io/inline/) when working with these templates. Email is notorious for inconsistent CSS support across different devices and clients (Gmail/Outlook/etc) so make sure to double-check everything and **test send** before publishing your content!
+Consult their documentation, and always remember to [inline the CSS](https://htmlemail.io/inline/) when working with these templates. Email is notorious for inconsistent CSS support across different devices and clients (Gmail/Outlook/etc) so make sure to double-check everything and **test send** before publishing your content!
 
 
 ## Images in email
