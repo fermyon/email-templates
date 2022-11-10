@@ -1,9 +1,21 @@
+<!--
+    templateType: email
+    isAvailableForNewContent: true
+-->
 <!doctype html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Fermyon Transactional Email</title>
+    <title>{% if content.html_title and content.html_title != '' %}{{ content.html_title }}{% else %}{{ content.body.subject }}{% endif %}</title>
+    {% if content.meta_description %}<meta name="description" content="{{ content.meta_description }}"/>{% endif %}
+    <style type="text/css" id="hs-inline-css">
+      /*<![CDATA[*/
+      /* everything in this style tag will be inlined onto matching elements */
+      .sample-rule {
+      }
+      /*]]>*/
+    </style>
     <style>
 @media only screen and (max-width: 620px) {
   table.body h1 {
@@ -98,7 +110,13 @@ table.body .article {
 </style>
   </head>
   <body style="background-color: #F7F4F8; font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
-    <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">This is preheader text. Some clients will show this text as a preview.</span>
+    <div id="preview_text" style="color: transparent; display: none;  text-align: center; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">{% text "preview_text" label="Preview Text <span class=help-text>This will be used as the preview text that displays in some email clients</span>", value="", no_wrapper=True %}</div>
+    <!-- View as webpage link -->
+    {% if content.create_page %}
+    <div class="content-block" style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; color: #999999; font-size: 12px; text-align: center;" valign="top" align="center">
+      Not rendering correctly? <a class="hubspot-mergetag" data-viewaswebpage="true" href="{{ view_as_page_url }}" style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; color: #999999; font-size: 12px; text-align: center;">View this email as a web page</a>.
+    </div>
+    {% endif %}
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F7F4F8; width: 100%;" width="100%" bgcolor="#F7F4F8">
       <tr>
         <td style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; font-size: 14px; vertical-align: top;" valign="top">&nbsp;</td>
@@ -115,31 +133,24 @@ table.body .article {
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
                     <tr>
                       <td style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; font-size: 14px; vertical-align: top;" valign="top">
-                        <p style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; font-size: 15px; line-height: 1.636; font-weight: normal; margin: 0; margin-bottom: 20px; max-width: 495px; margin-top: 0;">This is for when you need to send a simple email with a clear call to action. This is it - password reset, two factor auth, account notification, etc.</p>
                         
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%; margin-top: 28px; margin-bottom: 30px;" width="100%">
-                          <tbody>
-                            <tr>
-                              <td align="left" style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;" valign="top">
-                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
-                                  <tbody>
-                                    <tr>
-                                      <td style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; font-size: 14px; vertical-align: top; border-radius: 24px; text-align: center; background-color: #1FBCA0;" valign="top" align="center" bgcolor="#1FBCA0"> <a href="http://htmlemail.io" target="_blank" style="border: solid 1px #1FBCA0; border-radius: 24px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-decoration: none; text-transform: capitalize; background-color: #1FBCA0; border-color: #1FBCA0; color: #ffffff;">Call To Action</a> </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                        <p class="text-center" style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; font-size: 15px; line-height: 1.5; font-weight: normal; margin: 0; margin-bottom: 20px; max-width: 495px; margin-top: 0; text-align: center;">
+                            <a href="https://www.fermyon.com" target="_blank"><img src="https://21155010.fs1.hubspotusercontent-na1.net/hubfs/21155010/fermyon-newsletter-header.png" alt="Fermyon News Updates" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"></a>
+                        </p>
 
-                        <p style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; font-size: 15px; line-height: 1.636; font-weight: normal; margin: 0; margin-top: 20px; max-width: 495px; margin-bottom: 0;">Focus on the action with no distractions.<br>Good luck!</p>
+                        <p style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; font-size: 15px; line-height: 1.5; font-weight: normal; margin: 0; margin-top: 20px; margin-bottom: 20px; max-width: 495px;">&nbsp;</p>
+
+                        <!-- Insert body here -->
+                        {% module "email_template_logo" path="@hubspot/logo" label="Logo" %}
+                        {% module "email_template_main_email_body" path="@hubspot/email_body" label="Main Email Body" %}
+
+                        <p class="text-right chat" style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; font-size: 15px; line-height: 1.5; font-weight: normal; margin: 0; margin-top: 20px; max-width: 495px; margin-bottom: 0; text-align: right;"><a target="_blank" href="https://discord.com/invite/AAFNfS7NGf" style="color: #0D203F; text-decoration: none;"><img src="https://21155010.fs1.hubspotusercontent-na1.net/hubfs/21155010/chat-w-us.gif" alt="Chat with our team on the Fermyon Discord server" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%; margin: 0 -16px 16px 0; position: relative;"></a></p>
 
                         <div class="text-right" style="text-align: right;">
                           <!-- <hr> -->
-                          <p class="logo" style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; font-size: 15px; line-height: 1.636; font-weight: normal; max-width: 495px; margin-top: 0; margin-bottom: 0; margin: 0 0 -5px;"><a href="https://www.fermyon.com" style="color: #1FBCA0; text-decoration: underline;"><img src="https://www.fermyon.com/static/image/avatar.png" alt="Fermyon Logo" height="32px" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"></a></p>
+                          <p class="logo" style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; font-size: 15px; line-height: 1.5; font-weight: normal; margin-top: 0; margin-bottom: 0; margin: 0 0 -5px; max-width: 100%;"><a href="https://www.fermyon.com" style="color: #0D203F; text-decoration: none;"><img src="https://www.fermyon.com/static/image/avatar.png" alt="Fermyon Logo" height="32px" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"></a></p>
                         </div>
-                      </td>
+                      </a></p></td>
                     </tr>
                   </table>
                 </td>
@@ -154,12 +165,14 @@ table.body .article {
               <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
                 <tr>
                   <td class="content-block" style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; color: #999999; font-size: 12px; text-align: center;" valign="top" align="center">
-                    <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;"><a href="https://www.fermyon.com/" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">About Fermyon</a></span> &nbsp; &#8226; &nbsp; <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;"><a href="https://discord.gg/AAFNfS7NGf" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">Chat with us</a></span>
+                    <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;"><a href="https://fermyon.com/" target="_blank" style="text-decoration: none; color: #999999; font-size: 12px; text-align: center;">{{ site_settings.company_name }} {{ site_settings.company_street_address_1 }}{{ site_settings.company_street_address_2 }}, {{ site_settings.company_city }}, {{ site_settings.company_state }} {{ site_settings.company_zip }}</a></span>
+                    <br>
+                    <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;"><a href="https://discord.gg/AAFNfS7NGf" target="_blank" style="text-decoration: none; color: #999999; font-size: 12px; text-align: center;">Discord</a></span> &nbsp; &#8226; &nbsp; <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;"><a href="https://github.com/fermyon/" target="_blank" style="text-decoration: none; color: #999999; font-size: 12px; text-align: center;">GitHub</a></span>&nbsp; &#8226; &nbsp;  <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;"><a href="https://twitter.com/fermyontech" target="_blank" style="text-decoration: none; color: #999999; font-size: 12px; text-align: center;">Twitter</a></span> &nbsp; &#8226; &nbsp; <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;"><a href="https://www.youtube.com/channel/UCGgsMYwLxmIgv1lXaActZqw" target="_blank" style="text-decoration: none; color: #999999; font-size: 12px; text-align: center;">YouTube</a></span>
                   </td>
                 </tr>
                 <tr>
                   <td class="content-block powered-by" style="font-family: Sen, Europa, Avenir, system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; color: #999999; font-size: 12px; text-align: center;" valign="top" align="center">
-                    Don't like these emails? <a class="hubspot-mergetag" data-unsubscribe="true" href="{{ unsubscribe_link }}" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">Unsubscribe</a>.
+                    Don't like these emails? <a data-unsubscribe="true" href="{{ unsubscribe_link }}" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">Unsubscribe</a>.
                   </td>
                 </tr>
               </table>
